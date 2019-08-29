@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Pokemon Trivia Game</title>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="assets/javascript/game.js"></script>
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -14,17 +14,21 @@
   <header>
     <div class="container">
         <img src="assets/images/pokemon-logo.png" alt="logo">
-    </div>
-  </header>
-
-  <!-- Objective story-->
-  <div class="container">
-    <div id="rules">
+        <h1>Trivia Game!</h1>
+      </div>
+    </header>
+    
+    <!-- Objective story-->
+    <div class="container">
+      <div id="game">
+        <div class="col-md-4"></div>
+        <button class="col-md-4" id="start">Let's Go!</button>
+        <div class="col-md-4"></div>
       <h2 id="result"></h2>
       <h3 id="score"></h3>
     </div>
   </div>
-
 </body>
+
 
 </html>
