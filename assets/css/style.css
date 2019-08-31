@@ -1,5 +1,10 @@
 
-
+body {
+    background: gray;
+  }
 header, #game {
     text-align: center;
+}
+#logo {
+    width: 400px;
 }
