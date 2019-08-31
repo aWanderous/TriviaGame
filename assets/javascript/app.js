@@ -66,7 +66,16 @@ console.log(questions)
         $("#start, h1").hide();
         $("#logo").attr("src","assets/images/Pokémon_logo.png");
         
+        // timer starts when pressed
+        function clock(){
+            timer--;
+            $("#timer").html("Timer: "+ timer)
+        }
+        
+        
         function quiz() {
+            timer = 30;
+            countdown = setInterval(clock, 1000);
             $("#timer").text("Timer: " + timer);
             var now = questions[currentQuestion];
             var ask  = $("#question").text(now.question);
@@ -74,6 +83,7 @@ console.log(questions)
             
             for (var i =0; i < picks.length; i++) {
                 var selections = $("<img>")
+                selections.attr("class", picks[i]);
                 selections.attr("src", "assets/images/" + picks[i] + ".png");
                 selections.appendTo($("#multi"));
             }
@@ -81,7 +91,6 @@ console.log(questions)
         quiz();
     });
         
-    // timer starts when pressed
     
 
     
