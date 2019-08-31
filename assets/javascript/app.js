@@ -71,19 +71,21 @@ console.log(questions)
             var now = questions[currentQuestion];
             var ask  = $("#question").text(now.question);
             var picks = now.choices;
+            
             for (var i =0; i < picks.length; i++) {
                 var selections = $("<img>")
                 selections.attr("src", "assets/images/" + picks[i] + ".png");
-                selections.append($("#multi"));
-
+                selections.appendTo($("#multi"));
             }
         };
         quiz();
     });
         
     // timer starts when pressed
-    var clock = setInterval(timer--, 1000);
-console.log(clock)
+    
+
+    
+
     
         
         
