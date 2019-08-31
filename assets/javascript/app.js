@@ -53,7 +53,7 @@ $(document).ready(function () {
         choices: ["Diglett", "Vulpix", "Exeggutor", "Shellder"],
         answer: "Shellder"
     }]    
-console.log(questions)
+
 
     var timer = 30;
     var currentQuestion = 0;
@@ -70,11 +70,20 @@ console.log(questions)
         function clock(){
             timer--;
             $("#timer").html("Timer: "+ timer)
+            
+            if (timer == 0){
+                timesUp();
+            }
         }
         
-        
+        function timesUp() {
+            clearInterval(countdown);
+            nextQuestion();
+            $("#multi").removeAttr("img");;
+        }
+        // load questions
         function quiz() {
-            timer = 30;
+            timer = 3;
             countdown = setInterval(clock, 1000);
             $("#timer").text("Timer: " + timer);
             var now = questions[currentQuestion];
@@ -88,6 +97,11 @@ console.log(questions)
                 selections.appendTo($("#multi"));
             }
         };
+        
+        function nextQuestion() {
+            currentQuestion++;
+            quiz();
+        }
         quiz();
     });
         
