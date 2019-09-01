@@ -79,16 +79,16 @@ $(document).ready(function () {
         function timesUp() {
             clearInterval(countdown);
             nextQuestion();
-            $("#multi").removeAttr("img");;
         }
         // load questions
         function quiz() {
-            timer = 3;
+            timer = 30;
             countdown = setInterval(clock, 1000);
             $("#timer").text("Timer: " + timer);
             var now = questions[currentQuestion];
             var ask  = $("#question").text(now.question);
             var picks = now.choices;
+            $("#multi").empty() ;
             
             for (var i =0; i < picks.length; i++) {
                 var selections = $("<img>")
