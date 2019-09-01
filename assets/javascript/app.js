@@ -40,7 +40,7 @@ $(document).ready(function () {
     },    
     {   //  legendary Pokémon (Rapdash, .Articuno, Aggron, Gardevoir)1
         question: "Which Pokémon is a legendary?",
-        choices: ["Rapdash", "Articuno", "Aggron", "Gardevoir"],
+        choices: ["Rapidash", "Articuno", "Aggron", "Gardevoir"],
         answer: "Articuno"
     },
     {   //  Eevee evolutions (Suicune, Houndoom, Luxray, .Espeon)
@@ -60,13 +60,12 @@ $(document).ready(function () {
     var correct = 0;
     var countdown;
     
-    // set start screen
     // button to start game
     $("#start").click(function(){
         $("#start, h1").hide();
         $("#logo").attr("src","assets/images/Pokémon_logo.png");
         
-        // timer starts when pressed
+        // timer
         function clock(){
             timer--;
             $("#timer").html("Timer: "+ timer)
@@ -80,28 +79,43 @@ $(document).ready(function () {
             clearInterval(countdown);
             nextQuestion();
         }
+
         // load questions
         function quiz() {
-            timer = 30;
+            //timer shortened for testing
+            timer = 3;
             countdown = setInterval(clock, 1000);
             $("#timer").text("Timer: " + timer);
             var now = questions[currentQuestion];
-            var ask  = $("#question").text(now.question);
+            $("#question").text(now.question);
             var picks = now.choices;
             $("#multi").empty() ;
             
             for (var i =0; i < picks.length; i++) {
                 var selections = $("<img>")
-                selections.attr("class", picks[i]);
+                selections.attr("class", "pick");
                 selections.attr("src", "assets/images/" + picks[i] + ".png");
                 selections.appendTo($("#multi"));
-            }
+         
+            }           
         };
         
+        // click on questions
+        $(document).on("click", ".pick", function() {
+            console.log("works")
+        })
+
+        
+        // next question load
         function nextQuestion() {
+            if (questions.length -1 === currentQuestion){
+                console.log("game over")
+            } else {
             currentQuestion++;
             quiz();
+            };
         }
+
         quiz();
     });
         
