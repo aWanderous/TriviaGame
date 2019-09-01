@@ -113,12 +113,13 @@ $(document).ready(function () {
             }
         })
 
-        // next question load
+        // next question load and end game
         function nextQuestion() {
             if (questions.length -1 === currentQuestion){
                 $("#multi").empty();
                 $("#timer").empty();
                 $("#question").text("You scored: " + correct + "/10");
+                $("#multi").append("<button id='reset'>Restart Game?</button>");
             } else {
             currentQuestion++;
             quiz();
@@ -126,8 +127,12 @@ $(document).ready(function () {
         }
 
         quiz();
-        console.log(correct)
-    
+        
+        $(document).on("click", "#reset", function() {
+            correct = 0;
+            currentQuestion = 0;
+            quiz();
+        })
     });
         
     
