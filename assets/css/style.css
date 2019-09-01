@@ -1,10 +1,19 @@
 
-body {
-    background: gray;
-  }
+html, body {
+    background-image: url("../../assets/images/background.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
 header, #game {
+    color: darkgray;
     text-align: center;
 }
 #logo {
     width: 400px;
+}
+
+.pick {
+    width: 275px;
 }

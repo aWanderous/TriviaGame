@@ -14,7 +14,7 @@ $(document).ready(function () {
         question: "Which Pokémon is number 1 in the Pokédex?",
         choices: ["Squirtle", "Mew", "Bulbasaur", "Pikachu"],
         answer: "Bulbasaur",
-        rightGif: "<img src='assets/images/Right#1.gif'>",
+        rightGif: "<img src='assets/images/RightBulbasaur.gif'>",
         wrongGif:"<img src='assets/images/WrongPikachu.gif'>",
     }, 
     {   //  no evolution (Wailmer, .Farfetch'd, Clefairy, Marill)
@@ -118,7 +118,7 @@ $(document).ready(function () {
                 .attr("name", picks[i])
                 .text(picks[i])
                 .appendTo($("#multi"));
-            }           
+            }
         };
         
         // click on questions
