@@ -108,18 +108,17 @@ $(document).ready(function () {
             if (selected === questions[currentQuestion].answer) {
                 correct++;
                 timesUp();
-                console.log(correct)
             } else {
                 timesUp();
             }
-            console.log("clicked")
         })
 
-        
         // next question load
         function nextQuestion() {
             if (questions.length -1 === currentQuestion){
-                console.log("game over")
+                $("#multi").empty();
+                $("#timer").empty();
+                $("#question").text("You scored: " + correct + "/10");
             } else {
             currentQuestion++;
             quiz();
@@ -127,6 +126,8 @@ $(document).ready(function () {
         }
 
         quiz();
+        console.log(correct)
+    
     });
         
     
