@@ -83,7 +83,7 @@ $(document).ready(function () {
         // load questions
         function quiz() {
             //timer shortened for testing
-            timer = 3;
+            timer = 10;
             countdown = setInterval(clock, 1000);
             $("#timer").text("Timer: " + timer);
             var now = questions[currentQuestion];
@@ -93,16 +93,26 @@ $(document).ready(function () {
             
             for (var i =0; i < picks.length; i++) {
                 var selections = $("<img>")
-                selections.attr("class", "pick");
-                selections.attr("src", "assets/images/" + picks[i] + ".png");
-                selections.appendTo($("#multi"));
-         
+                selections.attr("class", "pick")
+                .attr("src", "assets/images/" + picks[i] + ".png")
+                .attr("name", picks[i])
+                .text(picks[i])
+                .appendTo($("#multi"));
             }           
         };
         
         // click on questions
         $(document).on("click", ".pick", function() {
-            console.log("works")
+            var selected = $(this).attr("name")
+
+            if (selected === questions[currentQuestion].answer) {
+                correct++;
+                timesUp();
+                console.log(correct)
+            } else {
+                timesUp();
+            }
+            console.log("clicked")
         })
 
         
