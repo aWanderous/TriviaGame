@@ -19,8 +19,8 @@ $(document).ready(function () {
     }, 
     {   //  no evolution (Wailmer, .Farfetch'd, Clefairy, Marill)
         question: "Which Pokémon does not have an evolution form?",
-        choices: ["Wailmer", "Farfetch'd", "Clefairy", "Marill"],
-        answer: "Farfetch'd",
+        choices: ["Wailmer", "Kangaskhan", "Clefairy", "Marill"],
+        answer: "Kangaskhan",
         rightGif: "<img src='assets/images/RightEevee.gif'>",
         wrongGif:"<img src='assets/images/WrongPika.gif'>",
     },
@@ -116,7 +116,7 @@ $(document).ready(function () {
                 selections.attr("class", "pick")
                 .attr("src", "assets/images/" + picks[i] + ".png")
                 .attr("name", picks[i])
-                .text(picks[i])
+                .html("</br><h5>" + picks[i] + "</h5>")
                 .appendTo($("#multi"));
             }
         };
