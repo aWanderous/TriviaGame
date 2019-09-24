@@ -1,3 +1,5 @@
 # TriviaGame
 
-Ten multiple questions based on pokemon, it has a 30 minute timer and fun a gif that let's you know if your choice is correct or not.
+- Ten multiple questions
+- 30 minute timer for each question
+- a different gif depending on correct or wrong that let's you know if your choice is correct or not
